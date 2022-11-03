@@ -6,9 +6,47 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
+    <header>
+      <h1>Validador de tarjeta</h1>
+    </header>
+    <div class="text">
+      <h3>Validador Seguro</h3>
+      <p>Confirma si tu tarjeta de crédito/débito es valida <br>
+        de forma rápida y segura, mediante el algoritmo <br>
+        de Luhn, más info <a href="https://es.wikipedia.org/wiki/Algoritmo_de_Luhn#:~:text=El%20algoritmo%20de%20Luhn%20o,cr%C3%A9dito%2C%20n%C3%BAmeros%20IMEI%2C%20etc.">aquí</a>
+      </p>
+    </div>
+    <div class="card">
+      <label for="ccNumber" class="form-label">Ingresa número de tarjeta</label>
+      <input
+        id="ccNumber"
+        placeholder="**** **** **** 1234" />
+        <br>
+        <br>
+        <input
+        type="button"
+        class="btn"
+        value="Validar"
+        id="btn-validar"
+        />
+    </div>
+
+    <div class="mb-3">
+      <label for="ccValidator" class="form-label"></label>
+      <box
+        disabled="true"
+        class="box"
+        id="ccValidator"
+        rows="3"
+        style="font-size: 25px"
+      ></box>
+    </div>
+    
+    <div class="mb-3 center d-flex justify-content-center">
+      <label for="attempts" class="form-label"></label>
+      <h3 id="attempts"></h3>
+    </div>
+
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
