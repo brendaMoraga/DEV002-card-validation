@@ -9,35 +9,30 @@ const validator = {
             if (i % 2 == 0) {
                 if ((currentDigit *= 2) > 9) {
 
+                    let firstNumber = parseInt(currentDigit / 10);
+                    let trailingNumber = currentDigit % 10;
 
-                } else {
-
-                    (currentDigit >=10) // -> sume los digitos de los numeros mayores a 10 guardar numeros multiplicados por 2 < 9
+                    currentDigit = firstNumber + trailingNumber;
                 }
-
-            } else {
-                // 
             }
-
             count += currentDigit;
         }
+        const resultado = (count % 10) === 0;
+        console.log(resultado, count);
+        return resultado;
     },
 
-    maskify: (ccNumber) => {
-        if (ccNumber.length < 4) {
-            return ccNumber
-        } else {
-            let last4 = ""
-            for (let i = ccNumber.length - 4; i < ccNumber.length; i++) {
-                last4 += ccNumber[i]
-            }
 
-            let mask = ""
-            for (let j = 0; j < ccNumber.length - 4; j++) {
-                mask += "#"
+    maskify: (ccNumber) => {
+        let myArray = []
+        for (let i = 0; i < ccNumber.length; i++) {
+            if (i < ccNumber.length - 4) {
+                myArray[i] = "#";
+            } else {
+                myArray[i] = ccNumber[i];
             }
-            return mask + last4
         }
+        return myArray.join("");
     }
 
 };
@@ -45,11 +40,6 @@ const validator = {
 
 
 
-
-
-
-
-
-export default validator;
+    export default validator;
 
 
