@@ -1,45 +1,71 @@
 const validator = {
     isValid: (ccNumber) => {
-        const arrNumber = ccNumber.split("").reverse()
+        const arrNumber = ccNumber.split("").reverse() //voltear arr 
         console.log(arrNumber)
         let count = 0;
 
         for (let i = 0; i < arrNumber.length; i++) {
             let currentDigit = parseInt(arrNumber[i]);
-            if (i % 2 == 0) {
-                if ((currentDigit *= 2) > 9) {
+            if (i % 2 !== 0) {  //establesco posiciones pares
+                if ((currentDigit *= 2) > 9) { // doblar 
+                    
+                    let firstNumber = parseInt(currentDigit / 10); // 1er dig
+                    let trailingNumber = currentDigit % 10; // segundo dig 
 
-                    let firstNumber = parseInt(currentDigit / 10);
-                    let trailingNumber = currentDigit % 10;
-
-                    currentDigit = firstNumber + trailingNumber;
+                    currentDigit = firstNumber + trailingNumber; // sumo ambos
+                    
+                } else if (currentDigit <= 9 ) {  // guarda dis <9
+                    
+                    currentDigit = currentDigit
+                    
+                    
                 }
+            } else {
+                
+                currentDigit = currentDigit // guarda impares
+                
+                
             }
-            count += currentDigit;
+            
+            count += currentDigit; // sumo todos los numeros de la tarjeta 
+            console.log(currentDigit);
         }
-        const resultado = (count % 10) === 0;
-        console.log(resultado, count);
-        return resultado;
+        console.log(count);
+
+        // condicional para resultado 
+        if (count % 10 == 0) {
+            console.log(true)
+            return true
+        } else {
+            console.log(false)
+            return false
+        }
+
     },
 
-
     maskify: (ccNumber) => {
-        let myArray = []
-        for (let i = 0; i < ccNumber.length; i++) {
-            if (i < ccNumber.length - 4) {
-                myArray[i] = "#";
-            } else {
-                myArray[i] = ccNumber[i];
-            }
+        ccNumber = ccNumber.split("");
+        for(let i = 0 ; i < ccNumber.length - 4; i++){
+            ccNumber[i] = "#";
         }
-        return myArray.join("");
+        ccNumber= ccNumber.join("");
+        console.log(ccNumber)
+        return ccNumber;
     }
 
-};
+    
+
+        
+        
+    
+    
+
+
+}
 
 
 
 
-    export default validator;
+export default validator;
 
 

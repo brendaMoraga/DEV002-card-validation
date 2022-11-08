@@ -22,7 +22,11 @@ const btn = document.getElementById('btn-validar')
 btn.addEventListener("click", function () {
   checkCC(elCCNumber.value);
 
-  validator.maskify(elCCNumber.value);
+  
+  let maskify = validator.maskify(elCCNumber.value);
+  
+  document.getElementById("ccNumber").value = maskify;
+
 });
 
 
@@ -30,5 +34,5 @@ btn.addEventListener("click", function () {
 
 //5457623898234113
 
-
+//4137894711755904
 
