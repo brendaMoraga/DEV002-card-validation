@@ -3,41 +3,45 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
   <title>Tarjeta de crédito válida</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@700&family=Niramit&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost&family=Kantumruy+Pro:wght@700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Validador de tarjeta</h1>
+    <h1>VALIDADOR DE TARJETAS</h1>
   </header>
-  <div class="text">
-    <h3>Validador Seguro</h3>
-    <p>Confirma si tu tarjeta de crédito/débito es valida <br>
-      de forma rápida y segura, mediante el algoritmo <br>
-      de Luhn, más info <a
-        href="https://es.wikipedia.org/wiki/Algoritmo_de_Luhn#:~:text=El%20algoritmo%20de%20Luhn%20o,cr%C3%A9dito%2C%20n%C3%BAmeros%20IMEI%2C%20etc.">aquí</a>
-    </p>
-  </div>
-  <div class="card">
-    <form> 
-      <input type="text" id="ccNumber" name="" value="" placeholder="Ingresa el número de tu tarjeta" required pattern="[0-9]{16}" size="16"/> 
-      <br>
-      <br>
-      <input type="button" name="" value="Validar" id="btn-validar" /> 
-    </form>
-  </div>
-
-  <div class="mb-3">
-    <label for="ccValidator" class="form-label"></label>
-    <box disabled="true" class="box" id="ccValidator" rows="3" style="font-size: 25px"></box>
-  </div>
-
-  <div class="mb-3 center d-flex justify-content-center">
-    <label for="attempts" class="form-label"></label>
-    <h3 id="attempts"></h3>
-  </div>
-
+  <section>
+    <div class="text">
+      <h3>VALIDADOR SEGURO</h3>
+      <p>CONFIRMA SI UNA TARJETA DE CRÉDITO/DÉBITO ES VÁLIDA
+        DE FORMA RÁPIDA Y SEGURA MEDIANTE ALGORITMO DE LUHN, MÁS INFO <a
+          href="https://es.wikipedia.org/wiki/Algoritmo_de_Luhn#:~:text=El%20algoritmo%20de%20Luhn%20o,cr%C3%A9dito%2C%20n%C3%BAmeros%20IMEI%2C%20etc.">AQUÍ</a>
+      </p>
+    </div>
+    <div class="card">
+      <form label="INGRESA NÚMERO DE TARJETA">
+        <input type="text" id="ccNumber" name="" value="" placeholder="Ingresa el número de tu tarjeta" maxlength="19" />
+        <br>
+        <br>
+        <input type="submit" class="btn" name="" value="validar" id="btn-validar" />
+        <label for="ccValidator" class="form-label"></label>
+        <box disabled="true" class="box" id="ccValidator"></box>
+      </form>
+    </div>
+  </section>
   <script type="module" src="./index.js"></script>
 </body>
 
