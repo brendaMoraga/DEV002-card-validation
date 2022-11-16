@@ -24,6 +24,8 @@
 
 
   3. Prototipo en papel:
+      
+      ![prototipo-de-baja](src/prototipo%20de%20baja.jpg)
 
   4. Agregar un resumen del feedback recibido indicando las mejoras a realizar.
 
@@ -33,6 +35,8 @@
         ingresar un texto indicando "ingresa numero de tarjeta" no sólo un placeholder para que personas que usen narrador puedas acceder a la información del imput. 
 
   5. Imagen del prototipo final:
+
+      ![prototipo-figma](src/prototipo%20figma%20.png)
 
 
 
